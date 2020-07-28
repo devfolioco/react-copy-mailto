@@ -1,0 +1,35 @@
+.copy-mailto a {
+  position: relative;
+  text-decoration: none;
+}
+
+.copy-mailto a:after {
+  transition: opacity 0.5s cubic-bezier(0.0, 0.0, 0.2, 1), transform 0.5s cubic-bezier(0.0, 0.0, 0.2, 1);
+  opacity: 0;
+  position: absolute;
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto;
+  max-width: fit-content; 
+  top: 0;
+  transform: rotate(0);
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  content: "Copied!";
+  display: inline-block;
+  background: white;
+  padding: 0.125rem 0.25rem;
+  color: black;
+}
+
+.copy-mailto a:hover {
+  text-decoration: underline;
+}
+
+.copy-mailto a.is-copied:after {
+  opacity: 1;
+  transform: rotate(-10deg);
+}

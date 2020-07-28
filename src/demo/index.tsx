@@ -1,9 +1,15 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
+import React from "react";
+import ReactDOM from "react-dom";
 
-import { Hello } from "../lib";
+import CopyMailTo from "../lib";
 
-ReactDOM.render(
-    <Hello compiler="TypeScript" framework="React" />,
-    document.getElementById("app")
+const App = () => (
+  <div style={{ display: "flex", alignItems: "center", flexDirection: 'column' }}>
+      <h1>Copy email address to clipboard</h1>
+    <CopyMailTo email="prateek@devfolio.co">
+      <span style={{ color: "green" }}>prateek@devfolio.co</span>
+    </CopyMailTo>
+  </div>
 );
+
+ReactDOM.render(<App />, document.getElementById("app"));
