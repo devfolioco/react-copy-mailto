@@ -1,5 +1,5 @@
 import React, { MouseEvent } from "react";
-import './index.css';
+import "./index.css";
 
 const copyToClipboard = (str: string) => {
   const el = document.createElement("textarea"); // Create a <textarea> element
@@ -34,29 +34,25 @@ const Hello = ({
   const copyEmail = (e: MouseEvent) => {
     e.preventDefault();
     copyToClipboard(email);
-    setShowCopied(true)
+    setShowCopied(true);
   };
 
   React.useEffect(() => {
-    const timeoutId = 0;
-    if(showCopied) {
-      setTimeout(()=>{
-        setShowCopied(false)
-      }, 1000)
+    if (showCopied) {
+      window.setTimeout(() => {
+        setShowCopied(false);
+      }, 1000);
     }
-    return () => clearTimeout(timeoutId)
   }, [showCopied]);
 
   return (
-    <div className="copy-mailto">
-      <a
-        href="#"
-        {...(showCopied ? { className: "is-copied" } : {})}
-        onClick={copyEmail}
-      >
-        {children}
-      </a>
-    </div>
+    <a
+      className={`copy-mailto ${showCopied ? "is-copied" : ""}`}
+      href="#"
+      onClick={copyEmail}
+    >
+      {children}
+    </a>
   );
 };
 
