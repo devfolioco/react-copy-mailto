@@ -23,11 +23,24 @@ const copyToClipboard = (str: string) => {
 };
 
 const CopyMailTo = ({
-  children = null,
   email,
+  children = null,
+  defaultTooltip = "Copy email address",
+  copiedTooltip = "Copied to clipboard!",
+  containerClass = "",
+  tooltipClass = "",
+  containerStyles = {},
+  tooltipStyles = {}
 }: {
-  children?: React.ReactNode | null;
   email: string;
+  children?: React.ReactNode | null;
+  defaultTooltip?: string;
+  copiedTooltip?: string;
+  containerClass?: string;
+  tooltipClass?: string;
+  containerStyles?: object;
+  tooltipStyles?: object;
+
 }): JSX.Element => {
   const [showCopied, setShowCopied] = React.useState(false);
 
@@ -50,15 +63,15 @@ const CopyMailTo = ({
 
   return (
     <a
-      title="Copy Email Address"
-      data-copied="Copied!"
-      className={`copy-mailto ${showCopied ? "is-copied" : ""}`}
-      href="#"
+      title={defaultTooltip}
+      className={`copy-mailto ${showCopied ? "is-copied" : ""} ${containerClass}`}
+      href={`mailto:${email}`}
+      style={containerStyles}
       onClick={copyEmail}
     >
       {children || email}
-      <span className="tooltiptext">
-        {showCopied ? "Copied to clipboard!" : "Copy email address"}
+      <span className={`tooltiptext ${tooltipClass}`} style={tooltipStyles}>
+        {showCopied ? copiedTooltip : defaultTooltip}
       </span>
     </a>
   );

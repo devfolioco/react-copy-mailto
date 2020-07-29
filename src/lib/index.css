@@ -1,9 +1,9 @@
-a.copy-mailto {
+.copy-mailto {
   position: relative;
   text-decoration: none;
 }
 
-a.copy-mailto .tooltiptext {
+.copy-mailto .tooltiptext {
     top: 1px;
     left: 50%;
     opacity: 0;
@@ -21,15 +21,15 @@ a.copy-mailto .tooltiptext {
     transition: opacity 0.3s;
 }
 
-a.copy-mailto .tooltiptext::after {
+.copy-mailto .tooltiptext::after {
   content: "";
 }
 
-a.copy-mailto:hover {
+.copy-mailto:hover {
   text-decoration: underline;
 }
 
-a.copy-mailto:hover .tooltiptext {
+.copy-mailto:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
 }
