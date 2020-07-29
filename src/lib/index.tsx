@@ -22,20 +22,23 @@ const copyToClipboard = (str: string) => {
   }
 };
 
-const Hello = ({
-  children,
+const CopyMailTo = ({
+  children = null,
   email,
 }: {
-  children: React.ReactNode;
+  children?: React.ReactNode | null;
   email: string;
 }): JSX.Element => {
   const [showCopied, setShowCopied] = React.useState(false);
 
-  const copyEmail = (e: MouseEvent) => {
-    e.preventDefault();
-    copyToClipboard(email);
-    setShowCopied(true);
-  };
+  const copyEmail = React.useCallback(
+    (e: MouseEvent) => {
+      e.preventDefault();
+      copyToClipboard(email);
+      setShowCopied(true);
+    },
+    [email]
+  );
 
   React.useEffect(() => {
     if (showCopied) {
@@ -47,13 +50,18 @@ const Hello = ({
 
   return (
     <a
+      title="Copy Email Address"
+      data-copied="Copied!"
       className={`copy-mailto ${showCopied ? "is-copied" : ""}`}
       href="#"
       onClick={copyEmail}
     >
-      {children}
+      {children || email}
+      <span className="tooltiptext">
+        {showCopied ? "Copied to clipboard!" : "Copy email address"}
+      </span>
     </a>
   );
 };
 
-export default Hello;
+export default CopyMailTo;
