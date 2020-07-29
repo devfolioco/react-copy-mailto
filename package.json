@@ -4,7 +4,8 @@
   "description": "",
   "main": "lib/index.js",
   "scripts": {
-    "build": "tsc",
+    "tsc": "tsc",
+    "build": "babel src/lib --out-dir lib --out-file-extension .cjs.js --extensions '.ts,.tsx' && tsc",
     "demo:dev": "webpack-dev-server --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,6 +16,10 @@
     "react-dom": "^16.8.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
     "@types/react": "^16.9.43",
     "@types/react-dom": "^16.9.8",
     "css-loader": "^4.0.0",

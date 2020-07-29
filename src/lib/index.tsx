@@ -1,5 +1,4 @@
 import React, { MouseEvent } from "react";
-import "./index.css";
 
 const copyToClipboard = (str: string) => {
   const el = document.createElement("textarea"); // Create a <textarea> element
@@ -22,36 +21,57 @@ const copyToClipboard = (str: string) => {
   }
 };
 
+const containerBaseStyles: React.CSSProperties = {
+  position: "relative",
+};
+
+const tooltipBaseStyles: React.CSSProperties = {
+  top: "1px",
+  left: "50%",
+  marginBottom: "-5px",
+  transform: "translate(-50%, -120%)",
+  position: "absolute",
+  width: "auto",
+  whiteSpace: "nowrap",
+  fontSize: "12px",
+  backgroundColor: "black",
+  color: "white",
+  padding: "2px 6px",
+  borderRadius: "2px",
+};
+
 const CopyMailTo = ({
   email,
   children = null,
   defaultTooltip = "Copy email address",
   copiedTooltip = "Copied to clipboard!",
-  containerClass = "",
-  tooltipClass = "",
   containerStyles = {},
-  tooltipStyles = {}
+  tooltipStyles = {},
 }: {
   email: string;
   children?: React.ReactNode | null;
   defaultTooltip?: string;
   copiedTooltip?: string;
-  containerClass?: string;
-  tooltipClass?: string;
   containerStyles?: object;
   tooltipStyles?: object;
-
 }): JSX.Element => {
   const [showCopied, setShowCopied] = React.useState(false);
+  const [showTooltip, setShowTooltip] = React.useState(false);
 
-  const copyEmail = React.useCallback(
-    (e: MouseEvent) => {
-      e.preventDefault();
-      copyToClipboard(email);
-      setShowCopied(true);
-    },
-    [email]
-  );
+  const copyEmail = (e: MouseEvent) => {
+    e.preventDefault();
+    copyToClipboard(email);
+    setShowCopied(true);
+    setShowTooltip(true);
+  };
+
+  const displayTooltip = () => {
+    setShowTooltip(true);
+  };
+
+  const hideTooltip = () => {
+    setShowTooltip(false);
+  };
 
   React.useEffect(() => {
     if (showCopied) {
@@ -61,18 +81,26 @@ const CopyMailTo = ({
     }
   }, [showCopied]);
 
+  const allContainerStyles = { ...containerBaseStyles, ...containerStyles };
+  const allTooltipStyles = { ...tooltipBaseStyles, ...tooltipStyles };
+
   return (
     <a
       title={defaultTooltip}
-      className={`copy-mailto ${showCopied ? "is-copied" : ""} ${containerClass}`}
       href={`mailto:${email}`}
-      style={containerStyles}
+      style={allContainerStyles}
       onClick={copyEmail}
+      onMouseOver={displayTooltip}
+      onMouseOut={hideTooltip}
+      onFocus={displayTooltip}
+      onBlur={hideTooltip}
     >
       {children || email}
-      <span className={`tooltiptext ${tooltipClass}`} style={tooltipStyles}>
-        {showCopied ? copiedTooltip : defaultTooltip}
-      </span>
+      {showTooltip && (
+        <span style={allTooltipStyles}>
+          {showCopied ? copiedTooltip : defaultTooltip}
+        </span>
+      )}
     </a>
   );
 };
