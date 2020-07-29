@@ -2,7 +2,9 @@
   "name": "react-copy-mailto",
   "version": "1.0.0",
   "description": "",
-  "main": "lib/index.js",
+  "main": "./lib/index.cjs.js",
+  "module": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "scripts": {
     "tsc": "tsc",
     "build": "babel src/lib --out-dir lib --out-file-extension .cjs.js --extensions '.ts,.tsx' && tsc",
