@@ -49,11 +49,11 @@ const CopyMailTo = ({
   tooltipStyles = {},
 }: {
   email: string;
-  children?: React.ReactNode | null;
+  children?: React.ReactNode;
   defaultTooltip?: string;
   copiedTooltip?: string;
-  containerStyles?: object;
-  tooltipStyles?: object;
+  containerStyles?: React.CSSProperties;
+  tooltipStyles?: React.CSSProperties;
 }): JSX.Element => {
   const [showCopied, setShowCopied] = React.useState(false);
   const [showTooltip, setShowTooltip] = React.useState(false);
