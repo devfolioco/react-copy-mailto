@@ -1,7 +1,7 @@
 {
   "name": "react-copy-mailto",
   "version": "1.0.0",
-  "description": "",
+  "description": "A fully customizable React component for copying email from mailto links",
   "main": "./lib/index.cjs.js",
   "module": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -9,8 +9,9 @@
     "tsc": "tsc",
     "build": "babel src/lib --out-dir lib --out-file-extension .cjs.js --extensions '.ts,.tsx' && tsc",
     "demo:dev": "webpack-dev-server --mode development",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "demo:prod": "webpack --mode production"
   },
+  "keywords": ["copy email", "react"],
   "author": "Devfolio",
   "license": "MIT",
   "peerDependencies": {
@@ -35,5 +36,12 @@
     "webpack": "^4.44.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/devfolioco/react-copy-mailto"
+  },
+  "bugs": {
+    "url": "https://github.com/devfolioco/react-copy-mailto/issues"
   }
 }
