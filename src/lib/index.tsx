@@ -26,18 +26,29 @@ const containerBaseStyles: React.CSSProperties = {
 };
 
 const tooltipBaseStyles: React.CSSProperties = {
-  top: "1px",
-  left: "50%",
-  marginBottom: "-5px",
-  transform: "translate(-50%, -120%)",
+  bottom: "26px",
+  maxWidth: "fit-content",
   position: "absolute",
   width: "auto",
+  margin: "auto",
+  fontWeight: "bold",
+  left: "0px",
+  right: "0px",
+  boxShadow: "0px 15px 25px rgba(0,0,0,.1),0px 10px 60px rgba(0,0,0,.1)",
   whiteSpace: "nowrap",
   fontSize: "12px",
   backgroundColor: "black",
   color: "white",
-  padding: "2px 6px",
-  borderRadius: "2px",
+  padding: "6px 8px",
+  borderRadius: "5px",
+  opacity: 0,
+  transform: "translateY(-5px)",
+  transition: "all 0.2s ease-in-out",
+};
+
+const toolTipVisibleStyles: React.CSSProperties = {
+  opacity: 1,
+  transform: "none",
 };
 
 const CopyMailTo = ({
@@ -81,8 +92,16 @@ const CopyMailTo = ({
     }
   }, [showCopied]);
 
-  const allContainerStyles = { ...containerBaseStyles, ...containerStyles };
-  const allTooltipStyles = { ...tooltipBaseStyles, ...tooltipStyles };
+  const allContainerStyles = {
+    ...containerBaseStyles,
+    ...containerStyles
+  };
+
+  const allTooltipStyles = {
+    ...tooltipBaseStyles,
+    ...tooltipStyles,
+    ...(showTooltip && toolTipVisibleStyles),
+  };
 
   return (
     <a
@@ -96,11 +115,10 @@ const CopyMailTo = ({
       onBlur={hideTooltip}
     >
       {children || email}
-      {showTooltip && (
-        <span style={allTooltipStyles}>
-          {showCopied ? copiedTooltip : defaultTooltip}
-        </span>
-      )}
+
+      <span style={allTooltipStyles}>
+        {showCopied ? copiedTooltip : defaultTooltip}
+      </span>
     </a>
   );
 };
