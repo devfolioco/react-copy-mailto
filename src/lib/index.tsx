@@ -35,7 +35,6 @@ const tooltipBaseStyles: React.CSSProperties = {
   left: "0px",
   right: "0px",
   boxShadow: "0px 15px 25px rgba(0,0,0,.1),0px 10px 60px rgba(0,0,0,.1)",
-  whiteSpace: "nowrap",
   fontSize: "12px",
   backgroundColor: "black",
   color: "white",
