@@ -5,12 +5,12 @@
 A fully customizable React component for copying email from `mailto` links.
 
 ## Motivation
-The one thing we all can agree on that we hate it when default mail app pops up after clicking on the `mailto` links. Most of the time we just want to copy the email address and that's where this module comes into play.
+The one thing we all can agree on that we hate it when the default mail app pops up after clicking on the `mailto` links. Most of the time we just want to copy the email address and that's where this module comes into play.
 
 
 ## Demo
 
-![here](https://media.giphy.com/media/h7uWVTHw1HWg614usS/giphy.gif)
+![here](https://media.giphy.com/media/MEYN4oO6FZan5wXQ3w/giphy.gif)
 
 
 ## Installation and Usage
