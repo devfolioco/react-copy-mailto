@@ -93,7 +93,7 @@ const CopyMailTo = ({
 
   const allContainerStyles = {
     ...containerBaseStyles,
-    ...containerStyles
+    ...containerStyles,
   };
 
   const allTooltipStyles = {
@@ -103,22 +103,22 @@ const CopyMailTo = ({
   };
 
   return (
-    <a
-      title={defaultTooltip}
-      href={`mailto:${email}`}
-      style={allContainerStyles}
-      onClick={copyEmail}
-      onMouseOver={displayTooltip}
-      onMouseOut={hideTooltip}
-      onFocus={displayTooltip}
-      onBlur={hideTooltip}
-    >
-      {children || email}
-
+    <span style={allContainerStyles}>
+      <a
+        aria-label={defaultTooltip}
+        onClick={copyEmail}
+        onMouseOver={displayTooltip}
+        onMouseOut={hideTooltip}
+        onFocus={displayTooltip}
+        onBlur={hideTooltip}
+        href={`mailto:${email}`}
+      >
+        {children || email}
+      </a>
       <span style={allTooltipStyles}>
         {showCopied ? copiedTooltip : defaultTooltip}
       </span>
-    </a>
+    </span>
   );
 };
 
