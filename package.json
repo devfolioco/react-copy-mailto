@@ -1,6 +1,6 @@
 {
   "name": "react-copy-mailto",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A fully customizable React component for copying email from mailto links",
   "main": "./lib/index.cjs.js",
   "module": "./lib/index.js",
