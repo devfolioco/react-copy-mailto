@@ -57,6 +57,7 @@ const CopyMailTo = ({
   copiedTooltip = "Copied to clipboard!",
   containerStyles = {},
   tooltipStyles = {},
+  anchorStyles = {},
 }: {
   email: string;
   children?: React.ReactNode;
@@ -64,6 +65,7 @@ const CopyMailTo = ({
   copiedTooltip?: string;
   containerStyles?: React.CSSProperties;
   tooltipStyles?: React.CSSProperties;
+  anchorStyles?: React.CSSProperties;
 }): JSX.Element => {
   const [showCopied, setShowCopied] = React.useState(false);
   const [showTooltip, setShowTooltip] = React.useState(false);
@@ -93,7 +95,7 @@ const CopyMailTo = ({
 
   const allContainerStyles = {
     ...containerBaseStyles,
-    ...containerStyles
+    ...containerStyles,
   };
 
   const allTooltipStyles = {
@@ -103,22 +105,23 @@ const CopyMailTo = ({
   };
 
   return (
-    <a
-      title={defaultTooltip}
-      href={`mailto:${email}`}
-      style={allContainerStyles}
-      onClick={copyEmail}
-      onMouseOver={displayTooltip}
-      onMouseOut={hideTooltip}
-      onFocus={displayTooltip}
-      onBlur={hideTooltip}
-    >
-      {children || email}
-
+    <span style={allContainerStyles}>
+      <a
+        aria-label={defaultTooltip}
+        onClick={copyEmail}
+        onMouseOver={displayTooltip}
+        onMouseOut={hideTooltip}
+        onFocus={displayTooltip}
+        onBlur={hideTooltip}
+        href={`mailto:${email}`}
+        style={anchorStyles}
+      >
+        {children || email}
+      </a>
       <span style={allTooltipStyles}>
         {showCopied ? copiedTooltip : defaultTooltip}
       </span>
-    </a>
+    </span>
   );
 };
 
