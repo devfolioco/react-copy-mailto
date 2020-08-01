@@ -9,7 +9,8 @@
     "tsc": "tsc",
     "build": "babel src/lib --out-dir lib --out-file-extension .cjs.js --extensions '.ts,.tsx' && tsc",
     "demo:dev": "webpack-dev-server --mode development",
-    "demo:prod": "webpack --mode production"
+    "demo:prod": "webpack --mode production",
+    "prepublishOnly": "yarn build"
   },
   "keywords": [
     "copy email",
