@@ -57,6 +57,7 @@ const CopyMailTo = ({
   copiedTooltip = "Copied to clipboard!",
   containerStyles = {},
   tooltipStyles = {},
+  anchorStyles = {},
 }: {
   email: string;
   children?: React.ReactNode;
@@ -64,6 +65,7 @@ const CopyMailTo = ({
   copiedTooltip?: string;
   containerStyles?: React.CSSProperties;
   tooltipStyles?: React.CSSProperties;
+  anchorStyles?: React.CSSProperties;
 }): JSX.Element => {
   const [showCopied, setShowCopied] = React.useState(false);
   const [showTooltip, setShowTooltip] = React.useState(false);
@@ -112,6 +114,7 @@ const CopyMailTo = ({
         onFocus={displayTooltip}
         onBlur={hideTooltip}
         href={`mailto:${email}`}
+        style={anchorStyles}
       >
         {children || email}
       </a>
