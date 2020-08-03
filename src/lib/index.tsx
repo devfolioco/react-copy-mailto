@@ -42,12 +42,14 @@ const tooltipBaseStyles: React.CSSProperties = {
   borderRadius: "5px",
   opacity: 0,
   transform: "translateY(-5px)",
+  visibility: "hidden",
   transition: "all 0.2s ease-in-out",
 };
 
 const toolTipVisibleStyles: React.CSSProperties = {
   opacity: 1,
   transform: "none",
+  visibility: "visible",
 };
 
 const CopyMailTo = ({
