@@ -6,6 +6,7 @@
 [![npm version](https://badge.fury.io/js/react-copy-mailto.svg)](https://badge.fury.io/js/react-copy-mailto) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-copy-mailto)
 
 A fully customizable React component for copying email from `mailto` links.
+Click [here](https://devfolioco.github.io/react-copy-mailto/)
 
 ## Motivation
 The one thing we all can agree on that we hate it when the default mail app pops up after clicking on the `mailto` links. Most of the time we just want to copy the email address and that's where this module comes into play. Big shout out to [Kuldar](https://twitter.com/kkuldar) whose tweet [thread](https://twitter.com/kkuldar/status/1270736717939716097) inspired us to build this.
