@@ -1,7 +1,7 @@
 name: CI
 on:
   push:
-    branches: [ master ]
+    branches: [ master, dewanshrawat15-patch* ]
   pull_request:
     branches: [ master ]
 
@@ -18,11 +18,12 @@ jobs:
         run: |
           npm install
           npm run build
+          npm run demo:prod
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
           GITHUB_TOKEN: ${{ secrets.Devfolio_Token }}
           BRANCH: gh-pages
-          FOLDER: lib
+          FOLDER: dist
           CLEAN: true
