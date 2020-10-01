@@ -1,4 +1,4 @@
-## react-copy-mailto
+## react-copy-mailto - A Node module to add a copy popover on mailto links
 
 [![npm version](https://badge.fury.io/js/react-copy-mailto.svg)](https://badge.fury.io/js/react-copy-mailto) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-copy-mailto)
 
