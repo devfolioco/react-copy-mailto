@@ -7,10 +7,21 @@
   "types": "./lib/index.d.ts",
   "scripts": {
     "tsc": "tsc",
+    "format": "prettier --write src/**/*.{js,jsx,ts,tsx}",
+    "lint": "eslint --fix src/**/*.{js,jsx,ts,tsx}",
     "build": "babel src/lib --out-dir lib --out-file-extension .cjs.js --extensions '.ts,.tsx' && tsc",
     "demo:dev": "webpack-dev-server --mode development",
     "demo:prod": "webpack --mode production",
     "prepublishOnly": "yarn build"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown",
+    "*.js": "eslint --cache --fix"
   },
   "keywords": [
     "copy email",
@@ -31,7 +42,11 @@
     "@types/react": "^16.9.43",
     "@types/react-dom": "^16.9.8",
     "css-loader": "^4.0.0",
+    "eslint": "^7.10.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-prettier": "^3.1.4",
     "html-webpack-plugin": "^4.3.0",
+    "prettier": "^2.1.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "source-map-loader": "^1.0.1",
