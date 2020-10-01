@@ -1,6 +1,14 @@
 ## react-copy-mailto
 
-[![npm version](https://badge.fury.io/js/react-copy-mailto.svg)](https://badge.fury.io/js/react-copy-mailto) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-copy-mailto)
+[![npm version](https://badge.fury.io/js/react-copy-mailto.svg)](https://badge.fury.io/js/react-copy-mailto)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-copy-mailto)
+[![GitHub issues](https://img.shields.io/github/issues-raw/devfolioco/react-copy-mailto?logo=github)](https://github.com/devfolioco/react-copy-mailto/issues) 
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/devfolioco/react-copy-mailto?logo=git)](https://github.com/devfolioco/react-copy-mailto/pulls)
+[![NPM](https://img.shields.io/npm/l/react-copy-mailto)](https://github.com/devfolioco/react-copy-mailto/blob/master/LICENSE)
+[![Twitter__follow](https://img.shields.io/twitter/follow/devfolioco?style=social)](https://twitter.com/Devfolioco)
+[![PR_accepted](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)]()
+
+
 
 A fully customizable React component for copying email from `mailto` links.
 
@@ -70,11 +78,12 @@ yarn demo:dev
 
 ## Contributing
 
-[![GitHub issues](https://img.shields.io/github/issues-raw/devfolioco/react-copy-mailto?logo=github)](https://github.com/devfolioco/react-copy-mailto/issues) [![GitHub pull requests](https://img.shields.io/github/issues-pr/devfolioco/react-copy-mailto?logo=git)](https://github.com/devfolioco/react-copy-mailto/pulls)
-
 Feel free to open [issues](https://github.com/devfolioco/react-copy-mailto/issues/new/choose) and [pull requests](https://github.com/devfolioco/react-copy-mailto/pulls)!
 
 ## License
 
-[![NPM](https://img.shields.io/npm/l/react-copy-mailto)](https://github.com/devfolioco/react-copy-mailto/blob/master/LICENSE)
+This repository is MIT-licensed ([LICENSE](https://github.com/devfolioco/react-copy-mailto/blob/master/LICENSE)).
+
+
+
 
