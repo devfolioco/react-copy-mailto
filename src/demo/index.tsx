@@ -8,7 +8,7 @@ const App = () => (
     style={{ display: "flex", alignItems: "center", flexDirection: "column" }}
   >
     <h1 style={{ marginBottom: "50px" }}>Copy email address to clipboard</h1>
-    <CopyMailTo email="email@domain.com" pos="above" />
+    <CopyMailTo email="email@domain.com" />
   </div>
 );
 
