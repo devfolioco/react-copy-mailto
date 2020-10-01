@@ -14,7 +14,9 @@
   },
   "keywords": [
     "copy email",
-    "react"
+    "react",
+    "email",
+    "mailto links"
   ],
   "author": "Devfolio",
   "license": "MIT",
