@@ -18,7 +18,7 @@ The one thing we all can agree on that we hate it when the default mail app pops
 
 ## Installation and Usage
 
-The easiest way to use this library is to install it via yarn or npm
+The easiest way to use this library is to install it via ```yarn``` or ```npm```. 
 
 ```
 yarn add react-copy-mailto
