@@ -50,6 +50,7 @@ You can customize almost every aspect of this component using the below props, o
 |  Name 	|   Type	|  Default 	|   Description	|
 |:-:	|---	|---	|---	|
 | email  	|  string 	|  none 	|  The email to be copied. 	|
+| theme  	|  string 	|  dark 	|  Use "light" for light background. 	|
 | children  	|  ReactNode  	|  null 	|  Use this if you want to use some custom component inside the anchor tag. 	|
 | defaultTooltip  	|   string	|   "Copy email address"	|   Text shown in the tooltip when the user hovers over the link.	|
 | copiedTooltip 	|   string	|   "Copied to clipboard!"	|   Text shown in the tooltip when the user clicks on the link and the text is copied to clipboard.	|
