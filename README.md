@@ -46,13 +46,13 @@ You can customize almost every aspect of this component using the below props, o
 
 |  Name 	|   Type	|  Default 	|   Description	|
 |:-:	|---	|---	|---	|
-| email  	|  string 	|  none 	|  The email to be copied 	|
+| email  	|  string 	|  none 	|  The email to be copied. 	|
 | children  	|  ReactNode  	|  null 	|  Use this if you want to use some custom component inside the anchor tag. 	|
 | defaultTooltip  	|   string	|   "Copy email address"	|   Text shown in the tooltip when the user hovers over the link.	|
 | copiedTooltip 	|   string	|   "Copied to clipboard!"	|   Text shown in the tooltip when the user clicks on the link and the text is copied to clipboard.	|
-| containerStyles  	|   style object	|   none	|   The styles to be applied to the container	|
-| tooltipStyles  	|   style object	|   none	|   The styles to be applied to the tooltip	|
-| anchorStyles  	|   style object	|   none	|   The styles to be applied to the anchor	|
+| containerStyles  	|   style object	|   none	|   The styles to be applied to the container.	|
+| tooltipStyles  	|   style object	|   none	|   The styles to be applied to the tooltip.	|
+| anchorStyles  	|   style object	|   none	|   The styles to be applied to the anchor.	|
 
 ## Development
 
