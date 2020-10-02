@@ -12,7 +12,8 @@ The one thing we all can agree on that we hate it when the default mail app pops
 
 
 ## Demo
-
+[Go to Hosted Demo](https://devfolioco.github.io/react-copy-mailto)
+<br/>
 ![here](https://media.giphy.com/media/MEYN4oO6FZan5wXQ3w/giphy.gif)
 
 
