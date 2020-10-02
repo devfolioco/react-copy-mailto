@@ -1,4 +1,4 @@
-## react-copy-mailto
+## react.copy.mailto
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
@@ -7,14 +7,13 @@
 
 A fully customizable React component for copying email from `mailto` link.
 
-## Motivation
+## Motivation:
 The one thing we all can agree on that we hate it when the default mail app pops up after clicking on the `mailto` link. Most of the time we just want to copy the email address and that's where this module comes into play. Big shout out to [Kuldar](https://twitter.com/kkuldar) whose tweet [thread](https://twitter.com/kkuldar/status/1270736717939716097) inspired us to build this.
 
 
-## Demo
+## Demo:
 
 ![here](https://media.giphy.com/media/MEYN4oO6FZan5wXQ3w/giphy.gif)
-
 
 ## Installation and Usage:
 
@@ -43,7 +42,7 @@ const YourComponent = () => (
 );
 ```
 
-## Props
+## Props:
 
 You can customize almost every aspect of this component using the below props, out of which **email is the only required prop**.
 
@@ -57,7 +56,7 @@ You can customize almost every aspect of this component using the below props, o
 | tooltipStyles  	|   style object	|   none	|   The styles to be applied to the tooltip.	|
 | anchorStyles  	|   style object	|   none	|   The styles to be applied to the anchor.	|
 
-## Development
+## Development:
 
 - Install the dependencies
 
@@ -71,18 +70,18 @@ yarn
 yarn demo:dev
 ```
 
-## Contributing
+## Contributing:
 
 [![GitHub issues](https://img.shields.io/github/issues-raw/devfolioco/react-copy-mailto?logo=github)](https://github.com/devfolioco/react-copy-mailto/issues) [![GitHub pull requests](https://img.shields.io/github/issues-pr/devfolioco/react-copy-mailto?logo=git)](https://github.com/devfolioco/react-copy-mailto/pulls)
 
 Feel free to open [issues](https://github.com/devfolioco/react-copy-mailto/issues/new/choose) and [pull requests](https://github.com/devfolioco/react-copy-mailto/pulls)!
 
-## License
+## License:
 
 [![NPM](https://img.shields.io/npm/l/react-copy-mailto)](https://github.com/devfolioco/react-copy-mailto/blob/master/LICENSE)
 
 
-## Contributors ✨
+## Contributors✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
@@ -100,4 +99,4 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!..
