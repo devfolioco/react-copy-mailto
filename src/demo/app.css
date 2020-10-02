@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+}
+.app {
+  height: 100vh;
+  background-color: #f8f8f8;
+  display: grid;
+  font-size: 20px;
+  place-items: center;
+}
+
+.app__body {
+  padding: 100px;
+  text-align: center;
+  background-color: white;
+  border-radius: 25px;
+  box-shadow: 0 1px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.app__body > img {
+  object-fit: contain;
+  height: 100px;
+  margin-bottom: 20px;
+}
+.app__button {
+  margin-top: 40px;
+  text-transform: inherit !important;
+  background-color: #cce4ff !important;
+  color: white;
+  padding: 20px 10px;
+  border-radius: 50px;
+}
