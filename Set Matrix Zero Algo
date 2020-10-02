@@ -1,0 +1,15 @@
+def setZeroes(self, A):
+        a = set()
+        b = set()
+        n = len(A)
+        m = len(A[0])
+        for i in range(n):
+            for j in range(m):
+                if A[i][j] == 0:
+                    a.add(i)
+                    b.add(j)
+        for i in range(n):
+            for j in range(m):
+                if i in a and j in b:
+                    A[i][j] = 0
+        return A
