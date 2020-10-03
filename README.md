@@ -3,7 +3,7 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-[![npm version](https://badge.fury.io/js/react-copy-mailto.svg)](https://badge.fury.io/js/react-copy-mailto) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-copy-mailto)
+[![npm version](https://badge.fury.io/js/react-copy-mailto.svg)](https://badge.fury.io/js/react-copy-mailto) [![npm version](https://img.shields.io/npm/dw/react-copy-mailto?logo=npm)](https://www.npmjs.com/package/react-copy-mailto) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-copy-mailto)
 
 A fully customizable React component for copying email from `mailto` links.
 
