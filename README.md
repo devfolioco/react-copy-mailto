@@ -79,7 +79,7 @@ Feel free to open [issues](https://github.com/devfolioco/react-copy-mailto/issue
 
 ## License
 
-[![NPM](https://img.shields.io/npm/l/react-copy-mailto)](https://github.com/devfolioco/react-copy-mailto/blob/master/LICENSE)
+[![NPM](https://img.shields.io/npm/l/react-copy-mailto)](https://github.com/devfolioco/react-copy-mailto/blob/master/LICENSE)[MIT](http://www.opensource.org/licenses/mit-license.php)
 
 
 ## Contributors ✨
