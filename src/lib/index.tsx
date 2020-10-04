@@ -51,7 +51,6 @@ const toolTipVisibleStyles: React.CSSProperties = {
   transform: "none",
   visibility: "visible",
 };
-
 const CopyMailTo = ({
   email,
   children = null,
@@ -71,7 +70,6 @@ const CopyMailTo = ({
 }): JSX.Element => {
   const [showCopied, setShowCopied] = React.useState(false);
   const [showTooltip, setShowTooltip] = React.useState(false);
-
   const copyEmail = (e: MouseEvent) => {
     e.preventDefault();
     copyToClipboard(email);
@@ -79,8 +77,13 @@ const CopyMailTo = ({
     setShowTooltip(true);
   };
 
-  const displayTooltip = () => {
-    setShowTooltip(true);
+  const displayTooltip = () => {  
+    navigator.clipboard.readText().then(clipText=>{
+      console.log("Current clipboard=",clipText);
+      if(clipText!=="email@domain.com")
+      {setShowTooltip(true);}
+    
+    });  
   };
 
   const hideTooltip = () => {
@@ -91,7 +94,7 @@ const CopyMailTo = ({
     if (showCopied) {
       window.setTimeout(() => {
         setShowCopied(false);
-      }, 1000);
+      }, 10000);
     }
   }, [showCopied]);
 
