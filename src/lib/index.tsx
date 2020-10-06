@@ -80,7 +80,7 @@ const CopyMailTo = ({
   };
 
   const toggleTooltip = () => {
-    setShowTooltip(prev=> !prev);
+    setShowTooltip(prevTooltipState => !prevTooltipState);
   };
 
   React.useEffect(() => {
