@@ -56,6 +56,7 @@ You can customize almost every aspect of this component using the below props, o
 | containerStyles  	|   style object	|   none	|   The styles to be applied to the container.	|
 | tooltipStyles  	|   style object	|   none	|   The styles to be applied to the tooltip.	|
 | anchorStyles  	|   style object	|   none	|   The styles to be applied to the anchor.	|
+| tooltipPosition  	|   string	|   "above"	|   The position of the tooltip.	|
 
 ## Development
 

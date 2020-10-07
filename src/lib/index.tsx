@@ -1,5 +1,7 @@
 import React, { MouseEvent } from "react";
 
+type TooltipPosition = "above" | "below";
+
 const copyToClipboard = (str: string) => {
   const el = document.createElement("textarea"); // Create a <textarea> element
   el.value = str; // Set its value to the string that you want copied
@@ -25,8 +27,8 @@ const containerBaseStyles: React.CSSProperties = {
   position: "relative",
 };
 
-const tooltipBaseStyles: React.CSSProperties = {
-  bottom: "26px",
+const tooltipBaseStyles = (tooltipPosition: string): React.CSSProperties => ({
+  [tooltipPosition === "above" ? "bottom" : "top"]: "26px",
   maxWidth: "fit-content",
   position: "absolute",
   width: "auto",
@@ -41,10 +43,10 @@ const tooltipBaseStyles: React.CSSProperties = {
   padding: "6px 8px",
   borderRadius: "5px",
   opacity: 0,
-  transform: "translateY(-5px)",
+  transform: `translateY(${tooltipPosition === "above" ? "-5px": "5px"})`,
   visibility: "hidden",
   transition: "all 0.2s ease-in-out",
-};
+});
 
 const toolTipVisibleStyles: React.CSSProperties = {
   opacity: 1,
@@ -60,6 +62,7 @@ const CopyMailTo = ({
   containerStyles = {},
   tooltipStyles = {},
   anchorStyles = {},
+  tooltipPosition = "above",
 }: {
   email: string;
   children?: React.ReactNode;
@@ -68,6 +71,7 @@ const CopyMailTo = ({
   containerStyles?: React.CSSProperties;
   tooltipStyles?: React.CSSProperties;
   anchorStyles?: React.CSSProperties;
+  tooltipPosition?: TooltipPosition;
 }): JSX.Element => {
   const [showCopied, setShowCopied] = React.useState(false);
   const [showTooltip, setShowTooltip] = React.useState(false);
@@ -101,10 +105,10 @@ const CopyMailTo = ({
   };
 
   const allTooltipStyles = {
-    ...tooltipBaseStyles,
-    ...tooltipStyles,
-    ...(showTooltip && toolTipVisibleStyles),
-  };
+		...tooltipBaseStyles(tooltipPosition),
+		...tooltipStyles,
+		...(showTooltip && toolTipVisibleStyles),
+	};
 
   return (
     <span style={allContainerStyles}>
