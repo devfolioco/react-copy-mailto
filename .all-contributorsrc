@@ -1,0 +1,36 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "prateek3255",
+      "name": "Prateek Surana",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/21277179?v=4",
+      "profile": "http://prateeksurana.me",
+      "contributions": [
+        "code",
+        "design",
+        "content",
+        "doc"
+      ]
+    },
+    {
+      "login": "ankiiitraj",
+      "name": "Ankit Raj",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/48787278?v=4",
+      "profile": "http://ankiiitraj.github.io",
+      "contributions": [
+        "tool"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "react-copy-mailto",
+  "projectOwner": "devfolioco",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
