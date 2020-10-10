@@ -1,4 +1,4 @@
-import React, { MouseEvent } from "react";
+import React, { MouseEvent, CSSProperties, ReactNode, useState, useEffect } from "react";
 
 const copyToClipboard = (str: string) => {
   const el = document.createElement("textarea"); // Create a <textarea> element
@@ -21,11 +21,11 @@ const copyToClipboard = (str: string) => {
   }
 };
 
-const containerBaseStyles: React.CSSProperties = {
+const containerBaseStyles: CSSProperties = {
   position: "relative",
 };
 
-const tooltipBaseStyles: React.CSSProperties = {
+const tooltipBaseStyles: CSSProperties = {
   bottom: "26px",
   maxWidth: "fit-content",
   position: "absolute",
@@ -46,7 +46,7 @@ const tooltipBaseStyles: React.CSSProperties = {
   transition: "all 0.2s ease-in-out",
 };
 
-const toolTipVisibleStyles: React.CSSProperties = {
+const toolTipVisibleStyles: CSSProperties = {
   opacity: 1,
   transform: "none",
   visibility: "visible",
@@ -62,15 +62,15 @@ const CopyMailTo = ({
   anchorStyles = {},
 }: {
   email: string;
-  children?: React.ReactNode;
+  children?: ReactNode;
   defaultTooltip?: string;
   copiedTooltip?: string;
-  containerStyles?: React.CSSProperties;
-  tooltipStyles?: React.CSSProperties;
-  anchorStyles?: React.CSSProperties;
+  containerStyles?: CSSProperties;
+  tooltipStyles?: CSSProperties;
+  anchorStyles?: CSSProperties;
 }): JSX.Element => {
-  const [showCopied, setShowCopied] = React.useState(false);
-  const [showTooltip, setShowTooltip] = React.useState(false);
+  const [showCopied, setShowCopied] = useState(false);
+  const [showTooltip, setShowTooltip] = useState(false);
 
   const copyEmail = (e: MouseEvent) => {
     e.preventDefault();
@@ -87,7 +87,7 @@ const CopyMailTo = ({
     setShowTooltip(false);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (showCopied) {
       window.setTimeout(() => {
         setShowCopied(false);
