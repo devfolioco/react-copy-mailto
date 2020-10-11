@@ -19,6 +19,6 @@
       "noUnusedParameters": true,
       "allowSyntheticDefaultImports": true
     },
-    "include": ["src/lib/*.tsx"],
+    "include": ["src/lib/*.tsx", ".eslintrc.js" ],
     "exclude": ["node_modules", "dist", "lib"]
 }
