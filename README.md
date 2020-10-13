@@ -8,7 +8,7 @@
 A fully customizable React component for copying email from `mailto` links.
 
 ## Motivation
-The one thing we all can agree on that we hate it when the default mail app pops up after clicking on the `mailto` links. Most of the time we just want to copy the email address and that's where this module comes into play. Big shout out to [Kuldar](https://twitter.com/kkuldar) whose tweet [thread](https://twitter.com/kkuldar/status/1270736717939716097) inspired us to build this.
+The one thing that we all can agree it will irritates us when the default mail app pops up after clicking on the `mailto` links. Most of the time we just want to copy the email address and that's where this module comes into play. Big shout out to [Kuldar](https://twitter.com/kkuldar) whose tweet [thread](https://twitter.com/kkuldar/status/1270736717939716097) inspired us to build this.
 
 
 ## Demo
@@ -75,7 +75,7 @@ yarn demo:dev
 
 [![GitHub issues](https://img.shields.io/github/issues-raw/devfolioco/react-copy-mailto?logo=github)](https://github.com/devfolioco/react-copy-mailto/issues) [![GitHub pull requests](https://img.shields.io/github/issues-pr/devfolioco/react-copy-mailto?logo=git)](https://github.com/devfolioco/react-copy-mailto/pulls)
 
-Feel free to open [issues](https://github.com/devfolioco/react-copy-mailto/issues/new/choose) and [pull requests](https://github.com/devfolioco/react-copy-mailto/pulls)!
+Feel free to open [issues](https://github.com/devfolioco/react-copy-mailto/issues/new/choose), Pull requests[pull requests](https://github.com/devfolioco/react-copy-mailto/pulls)! and find bugs. 
 
 ## License
 
@@ -100,4 +100,4 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome! Let's grow together! 
