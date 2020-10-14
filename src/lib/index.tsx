@@ -1,5 +1,7 @@
 import React, { MouseEvent, CSSProperties, ReactNode, useState, useEffect } from "react";
 
+type theme = "dark" | "light";
+
 const copyToClipboard = (str: string) => {
   const el = document.createElement("textarea"); // Create a <textarea> element
   el.value = str; // Set its value to the string that you want copied
@@ -25,7 +27,7 @@ const containerBaseStyles: CSSProperties = {
   position: "relative",
 };
 
-const tooltipBaseStyles: CSSProperties = {
+const tooltipBaseStyles = (theme: string): CSSProperties => ({
   bottom: "26px",
   maxWidth: "fit-content",
   position: "absolute",
@@ -36,15 +38,15 @@ const tooltipBaseStyles: CSSProperties = {
   right: "0px",
   boxShadow: "0px 15px 25px rgba(0,0,0,.1),0px 10px 60px rgba(0,0,0,.1)",
   fontSize: "12px",
-  backgroundColor: "black",
-  color: "white",
+  backgroundColor: `${theme === 'light' ? 'white' : 'black'}`,
+  color: `${theme === 'light' ? 'black' : 'white'}`,
   padding: "6px 8px",
   borderRadius: "5px",
   opacity: 0,
   transform: "translateY(-5px)",
   visibility: "hidden",
   transition: "all 0.2s ease-in-out",
-};
+});
 
 const toolTipVisibleStyles: CSSProperties = {
   opacity: 1,
@@ -54,6 +56,7 @@ const toolTipVisibleStyles: CSSProperties = {
 
 const CopyMailTo = ({
   email,
+  theme = "dark",
   children = null,
   defaultTooltip = "Copy email address",
   copiedTooltip = "Copied to clipboard!",
@@ -62,6 +65,7 @@ const CopyMailTo = ({
   anchorStyles = {},
 }: {
   email: string;
+  theme?: theme;
   children?: ReactNode;
   defaultTooltip?: string;
   copiedTooltip?: string;
@@ -79,20 +83,18 @@ const CopyMailTo = ({
     setShowTooltip(true);
   };
 
-  const displayTooltip = () => {
-    setShowTooltip(true);
-  };
-
-  const hideTooltip = () => {
-    setShowTooltip(false);
+  const toggleTooltip = () => {
+    setShowTooltip(prevTooltipState => !prevTooltipState);
   };
 
   useEffect(() => {
+    let intervalId: number;
     if (showCopied) {
-      window.setTimeout(() => {
+      intervalId = window.setTimeout(() => {
         setShowCopied(false);
       }, 1000);
     }
+    return (() => window.clearInterval(intervalId));
   }, [showCopied]);
 
   const allContainerStyles = {
@@ -101,9 +103,9 @@ const CopyMailTo = ({
   };
 
   const allTooltipStyles = {
-    ...tooltipBaseStyles,
+    ...tooltipBaseStyles(theme),
     ...tooltipStyles,
-    ...(showTooltip && toolTipVisibleStyles),
+    ...(showTooltip && toolTipVisibleStyles)
   };
 
   return (
@@ -111,10 +113,10 @@ const CopyMailTo = ({
       <a
         aria-label={defaultTooltip}
         onClick={copyEmail}
-        onMouseOver={displayTooltip}
-        onMouseOut={hideTooltip}
-        onFocus={displayTooltip}
-        onBlur={hideTooltip}
+        onMouseOver={toggleTooltip}
+        onMouseOut={toggleTooltip}
+        onFocus={toggleTooltip}
+        onBlur={toggleTooltip}
         href={`mailto:${email}`}
         style={anchorStyles}
       >
