@@ -88,11 +88,13 @@ const CopyMailTo = ({
   };
 
   React.useEffect(() => {
+    let intervalId: number;
     if (showCopied) {
-      window.setTimeout(() => {
+      intervalId = window.setTimeout(() => {
         setShowCopied(false);
       }, 1000);
     }
+    return (() => window.clearInterval(intervalId));
   }, [showCopied]);
 
   const allContainerStyles = {
