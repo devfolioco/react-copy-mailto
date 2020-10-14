@@ -83,12 +83,8 @@ const CopyMailTo = ({
     setShowTooltip(true);
   };
 
-  const displayTooltip = () => {
-    setShowTooltip(true);
-  };
-
-  const hideTooltip = () => {
-    setShowTooltip(false);
+  const toggleTooltip = () => {
+    setShowTooltip(prevTooltipState => !prevTooltipState);
   };
 
   React.useEffect(() => {
@@ -115,10 +111,10 @@ const CopyMailTo = ({
       <a
         aria-label={defaultTooltip}
         onClick={copyEmail}
-        onMouseOver={displayTooltip}
-        onMouseOut={hideTooltip}
-        onFocus={displayTooltip}
-        onBlur={hideTooltip}
+        onMouseOver={toggleTooltip}
+        onMouseOut={toggleTooltip}
+        onFocus={toggleTooltip}
+        onBlur={toggleTooltip}
         href={`mailto:${email}`}
         style={anchorStyles}
       >
