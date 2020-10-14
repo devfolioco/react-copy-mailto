@@ -1,6 +1,6 @@
 ## react-copy-mailto
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![npm version](https://badge.fury.io/js/react-copy-mailto.svg)](https://badge.fury.io/js/react-copy-mailto) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-copy-mailto)
@@ -95,6 +95,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="http://prateeksurana.me"><img src="https://avatars3.githubusercontent.com/u/21277179?v=4" width="100px;" alt=""/><br /><sub><b>Prateek Surana</b></sub></a><br /><a href="https://github.com/devfolioco/react-copy-mailto/commits?author=prateek3255" title="Code">💻</a> <a href="#design-prateek3255" title="Design">🎨</a> <a href="#content-prateek3255" title="Content">🖋</a> <a href="https://github.com/devfolioco/react-copy-mailto/commits?author=prateek3255" title="Documentation">📖</a></td>
     <td align="center"><a href="http://ankiiitraj.github.io"><img src="https://avatars2.githubusercontent.com/u/48787278?v=4" width="100px;" alt=""/><br /><sub><b>Ankit Raj</b></sub></a><br /><a href="#tool-ankiiitraj" title="Tools">🔧</a> <a href="https://github.com/devfolioco/react-copy-mailto/commits?author=ankiiitraj" title="Code">💻</a></td>
+    <td align="center"><a href="http://www.binu.live"><img src="https://avatars2.githubusercontent.com/u/45959932?v=4" width="100px;" alt=""/><br /><sub><b>Binu kumar</b></sub></a><br /><a href="https://github.com/devfolioco/react-copy-mailto/commits?author=binu42" title="Code">💻</a></td>
   </tr>
 </table>
 
