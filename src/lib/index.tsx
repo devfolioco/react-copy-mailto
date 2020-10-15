@@ -29,17 +29,17 @@ const containerBaseStyles: React.CSSProperties = {
 
 const tooltipBaseStyles = (theme: string): React.CSSProperties => ({
   bottom: "26px",
-  maxWidth: "fit-content",
+  maxWidth: "max-content",
   position: "absolute",
-  width: "auto",
+  width: "max-content",
   margin: "auto",
   fontWeight: "bold",
   left: "0px",
   right: "0px",
   boxShadow: "0px 15px 25px rgba(0,0,0,.1),0px 10px 60px rgba(0,0,0,.1)",
   fontSize: "12px",
-  backgroundColor: `${theme === 'light' ? 'white' : 'black'}`,
-  color: `${theme === 'light' ? 'black' : 'white'}`,
+  backgroundColor: `${theme === "light" ? "white" : "black"}`,
+  color: `${theme === "light" ? "black" : "white"}`,
   padding: "6px 8px",
   borderRadius: "5px",
   opacity: 0,
@@ -84,7 +84,7 @@ const CopyMailTo = ({
   };
 
   const toggleTooltip = () => {
-    setShowTooltip(prevTooltipState => !prevTooltipState);
+    setShowTooltip((prevTooltipState) => !prevTooltipState);
   };
 
   React.useEffect(() => {
@@ -94,7 +94,7 @@ const CopyMailTo = ({
         setShowCopied(false);
       }, 1000);
     }
-    return (() => window.clearInterval(intervalId));
+    return () => window.clearInterval(intervalId);
   }, [showCopied]);
 
   const allContainerStyles = {
@@ -105,7 +105,7 @@ const CopyMailTo = ({
   const allTooltipStyles = {
     ...tooltipBaseStyles(theme),
     ...tooltipStyles,
-    ...(showTooltip && toolTipVisibleStyles)
+    ...(showTooltip && toolTipVisibleStyles),
   };
 
   return (
