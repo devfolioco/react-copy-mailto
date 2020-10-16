@@ -27,8 +27,8 @@ const containerBaseStyles: React.CSSProperties = {
   position: "relative",
 };
 
-const tooltipBaseStyles = (theme: string): React.CSSProperties => ({
-  bottom: "26px",
+const tooltipBaseStyles = (theme: string, showTooltipAtBottom: boolean): React.CSSProperties => ({
+  [ showTooltipAtBottom ? "top": "bottom" ]: "26px",
   maxWidth: "fit-content",
   position: "absolute",
   width: "auto",
@@ -43,7 +43,7 @@ const tooltipBaseStyles = (theme: string): React.CSSProperties => ({
   padding: "6px 8px",
   borderRadius: "5px",
   opacity: 0,
-  transform: "translateY(-5px)",
+  transform: `translateY(${showTooltipAtBottom ? "": "-"}5px)`,
   visibility: "hidden",
   transition: "all 0.2s ease-in-out",
 });
@@ -63,6 +63,7 @@ const CopyMailTo = ({
   containerStyles = {},
   tooltipStyles = {},
   anchorStyles = {},
+  showTooltipAtBottom = false,
 }: {
   email: string;
   theme?: theme;
@@ -72,6 +73,7 @@ const CopyMailTo = ({
   containerStyles?: React.CSSProperties;
   tooltipStyles?: React.CSSProperties;
   anchorStyles?: React.CSSProperties;
+  showTooltipAtBottom?: boolean;
 }): JSX.Element => {
   const [showCopied, setShowCopied] = React.useState(false);
   const [showTooltip, setShowTooltip] = React.useState(false);
@@ -103,7 +105,7 @@ const CopyMailTo = ({
   };
 
   const allTooltipStyles = {
-    ...tooltipBaseStyles(theme),
+    ...tooltipBaseStyles(theme, showTooltipAtBottom),
     ...tooltipStyles,
     ...(showTooltip && toolTipVisibleStyles)
   };
