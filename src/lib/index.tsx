@@ -83,19 +83,14 @@ const CopyMailTo = ({
     setShowTooltip(true);
   };
 
-  const toggleTooltip = () => {
-    setShowTooltip(prevTooltipState => !prevTooltipState);
-  };
+  const openTooltip = () => {
+    setShowCopied(false);
+    setShowTooltip(true);
+  }
 
-  React.useEffect(() => {
-    let intervalId: number;
-    if (showCopied) {
-      intervalId = window.setTimeout(() => {
-        setShowCopied(false);
-      }, 1000);
-    }
-    return (() => window.clearInterval(intervalId));
-  }, [showCopied]);
+  const closeTooltip = () => {
+    setShowTooltip(false);
+  }
 
   const allContainerStyles = {
     ...containerBaseStyles,
@@ -113,10 +108,10 @@ const CopyMailTo = ({
       <a
         aria-label={defaultTooltip}
         onClick={copyEmail}
-        onMouseOver={toggleTooltip}
-        onMouseOut={toggleTooltip}
-        onFocus={toggleTooltip}
-        onBlur={toggleTooltip}
+        onMouseOver={openTooltip}
+        onMouseOut={closeTooltip}
+        onFocus={openTooltip}
+        onBlur={closeTooltip}
         href={`mailto:${email}`}
         style={anchorStyles}
       >
