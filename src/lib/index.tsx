@@ -28,7 +28,7 @@ const containerBaseStyles: React.CSSProperties = {
 };
 
 const tooltipBaseStyles = (theme: string): React.CSSProperties => ({
-  bottom: "26px",
+  bottom: "28px",
   maxWidth: "fit-content",
   position: "absolute",
   width: "auto",
@@ -49,7 +49,7 @@ const tooltipBaseStyles = (theme: string): React.CSSProperties => ({
 });
 
 const toolTipVisibleStyles: React.CSSProperties = {
-  opacity: 1,
+  opacity: 2,
   transform: "none",
   visibility: "visible",
 };
