@@ -1,6 +1,16 @@
 import React, { MouseEvent } from "react";
 
 type theme = "dark" | "light";
+interface CopyMailToPropsInterface  {
+  email: string;
+  theme: theme;
+  children?: React.ReactNode;
+  defaultTooltip?: string;
+  copiedTooltip?: string;
+  containerStyles?: React.CSSProperties;
+  tooltipStyles?: React.CSSProperties;
+  anchorStyles?: React.CSSProperties;
+}
 
 const copyToClipboard = (str: string) => {
   const el = document.createElement("textarea"); // Create a <textarea> element
@@ -63,16 +73,7 @@ const CopyMailTo = ({
   containerStyles = {},
   tooltipStyles = {},
   anchorStyles = {},
-}: {
-  email: string;
-  theme?: theme;
-  children?: React.ReactNode;
-  defaultTooltip?: string;
-  copiedTooltip?: string;
-  containerStyles?: React.CSSProperties;
-  tooltipStyles?: React.CSSProperties;
-  anchorStyles?: React.CSSProperties;
-}): JSX.Element => {
+}: CopyMailToPropsInterface): JSX.Element => {
   const [showCopied, setShowCopied] = React.useState(false);
   const [showTooltip, setShowTooltip] = React.useState(false);
 
