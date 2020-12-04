@@ -4,7 +4,10 @@ import ReactDOM from "react-dom";
 import CopyMailTo from "../lib";
 import "./styles.css";
 
+type themeOptions = "dark" | "light";
+
 const App = () => {
+  const [theme, setTheme] = useState<themeOptions>("dark");
   const [email, setEmail] = useState("email@domain.com");
   const [defaultTooltip, setDefaultTooltip] = useState("Copy email address");
   const [copiedTooltip, setCopiedTooltip] = useState("Copied to clipboard!");
@@ -20,6 +23,13 @@ const App = () => {
             <h2>react-copy-mailto</h2>
           </div>
         </a>
+        <div className="side-bar__segment">
+          <label htmlFor="theme-inputs">theme
+          <select name="theme-inputs" value={theme} onChange={(e: any) => setTheme(e.target.value)}>
+            <option value="dark">dark</option>
+            <option value="light">light</option>
+          </select></label>
+        </div>
         <div className="side-bar__segment">
           <label htmlFor="email-inputs">
             email
@@ -69,6 +79,7 @@ const App = () => {
           </h1>
           <div className="emailStyle">
             <CopyMailTo
+              theme={theme}
               email={email}
               defaultTooltip={defaultTooltip}
               copiedTooltip={copiedTooltip}

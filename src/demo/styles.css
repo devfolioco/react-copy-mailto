@@ -122,7 +122,8 @@ a {
 
 .side-bar__segment>label>input[type='number'],
 .side-bar__segment>label>input[type='text'],
-.side-bar__segment>label>input[type='email'] {
+.side-bar__segment>label>input[type='email'],
+.side-bar__segment>label>select {
     width: 150px;
     border-radius: 4px;
     border: 1px solid lightgrey;
