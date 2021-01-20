@@ -40,6 +40,7 @@ const containerBaseStyles: React.CSSProperties = {
 const tooltipBaseStyles = (theme: string): React.CSSProperties => ({
   bottom: "26px",
   maxWidth: "fit-content",
+  minWidth: "115px",
   position: "absolute",
   width: "auto",
   margin: "auto",
