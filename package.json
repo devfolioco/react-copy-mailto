@@ -48,5 +48,9 @@
   },
   "bugs": {
     "url": "https://github.com/devfolioco/react-copy-mailto/issues"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1"
   }
 }
