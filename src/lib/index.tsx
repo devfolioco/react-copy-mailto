@@ -20,7 +20,7 @@ const copyToClipboard = (str: string) => {
   el.style.left = "-9999px"; // Move outside the screen to make it invisible
   document.body.appendChild(el); // Append the <textarea> element to the HTML document
   const selected =
-    document.getSelection()?.rangeCount || 0 > 0 // Check if there is any content selected previously
+    (document.getSelection()?.rangeCount || 0) > 0 // Check if there is any content selected previously
       ? document.getSelection()?.getRangeAt(0) // Store selection if found
       : false; // Mark as false to know no selection existed before
   el.select(); // Select the <textarea> content
