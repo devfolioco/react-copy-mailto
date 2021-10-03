@@ -79,9 +79,13 @@ const CopyMailTo = ({
   const [showCopied, setShowCopied] = React.useState(false);
   const [showTooltip, setShowTooltip] = React.useState(false);
 
-  const copyEmail = (e: MouseEvent) => {
+  const copyEmail = (e: MouseEvent, isSecure: Boolean) => {
     e.preventDefault();
-    copyToClipboard(window.atob(email));
+    if(isSecure){
+      copyToClipboard(window.atob(email));
+    } else {
+      copyToClipboard(email);
+    }
     setShowCopied(true);
     setShowTooltip(true);
   };
@@ -119,7 +123,7 @@ const CopyMailTo = ({
     <span style={allContainerStyles}>
       <a
         aria-label={defaultTooltip}
-        onClick={copyEmail}
+        onClick={(e) => copyEmail(e, isSecure)}
         onMouseOver={toggleTooltip}
         onMouseOut={toggleTooltip}
         onFocus={toggleTooltip}
