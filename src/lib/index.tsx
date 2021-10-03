@@ -3,6 +3,7 @@ import React, { MouseEvent } from "react";
 type theme = "dark" | "light";
 interface CopyMailToPropsInterface  {
   email: string;
+  isSecure: boolean;
   theme: theme;
   children?: React.ReactNode;
   defaultTooltip?: string;
@@ -66,6 +67,7 @@ const toolTipVisibleStyles: React.CSSProperties = {
 
 const CopyMailTo = ({
   email,
+  isSecure,
   theme = "dark",
   children = null,
   defaultTooltip = "Copy email address",
@@ -79,7 +81,7 @@ const CopyMailTo = ({
 
   const copyEmail = (e: MouseEvent) => {
     e.preventDefault();
-    copyToClipboard(email);
+    copyToClipboard(window.atob(email));
     setShowCopied(true);
     setShowTooltip(true);
   };
@@ -109,6 +111,10 @@ const CopyMailTo = ({
     ...(showTooltip && toolTipVisibleStyles)
   };
 
+  if(isSecure){
+    email = window.btoa(email);
+  }
+
   return (
     <span style={allContainerStyles}>
       <a
@@ -118,10 +124,10 @@ const CopyMailTo = ({
         onMouseOut={toggleTooltip}
         onFocus={toggleTooltip}
         onBlur={toggleTooltip}
-        href={`mailto:${email}`}
+        href={isSecure ? "mailto:" + window.atob(email) : "mailto:" + email}
         style={anchorStyles}
       >
-        {children || email}
+        {children || isSecure ? window.atob(email) : email}
       </a>
       <span style={allTooltipStyles}>
         {showCopied ? copiedTooltip : defaultTooltip}
